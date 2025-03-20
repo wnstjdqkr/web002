@@ -22,44 +22,23 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>버튼 클릭 게임</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 50px;
-        }
-        button {
-            padding: 20px 40px;
-            font-size: 20px;
-            cursor: pointer;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-        }
-        button:hover {
-            background-color: #45a049;
-        }
-        .message {
-            font-size: 24px;
-            margin-top: 20px;
-            font-weight: bold;
-            color: green;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>클릭 횟수 세기</title>
 </head>
 <body>
-    <h1>버튼 클릭 게임</h1>
-    <button onclick="showMessage()">클릭해 보세요!</button>
-    <div class="message" id="message"></div>
 
-    <script>
-        function showMessage() {
-            document.getElementById("message").textContent = "잘했어요!";
-        }
-    </script>
+  <h1>클릭 횟수 세기</h1>
+  <button onclick="increment()">클릭!</button>
+  <p>클릭 횟수: <span id="count">0</span></p>
+
+  <script>
+    let count = 0;
+    function increment() {
+      count++;
+      document.getElementById('count').textContent = count;
+    }
+  </script>
+
 </body>
 </html>
