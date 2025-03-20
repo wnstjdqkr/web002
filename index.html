@@ -24,7 +24,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>배경 색상 바꾸기 게임</title>
+    <title>버튼 클릭 게임</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -43,26 +43,22 @@
         button:hover {
             background-color: #45a049;
         }
+        .message {
+            font-size: 24px;
+            margin-top: 20px;
+            font-weight: bold;
+            color: green;
+        }
     </style>
 </head>
 <body>
-    <h1>배경 색상 바꾸기 게임</h1>
-    <button onclick="changeBackgroundColor()">배경색 바꾸기</button>
+    <h1>버튼 클릭 게임</h1>
+    <button onclick="showMessage()">클릭해 보세요!</button>
+    <div class="message" id="message"></div>
 
     <script>
-        function getRandomColor() {
-            // 16진수 색상 코드 생성
-            const letters = '0123456789ABCDEF';
-            let color = '#';
-            for (let i = 0; i < 6; i++) {
-                color += letters[Math.floor(Math.random() * 16)];
-            }
-            return color;
-        }
-
-        function changeBackgroundColor() {
-            // 무작위 색상으로 배경 색상 변경
-            document.body.style.backgroundColor = getRandomColor();
+        function showMessage() {
+            document.getElementById("message").textContent = "잘했어요!";
         }
     </script>
 </body>
