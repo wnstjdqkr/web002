@@ -18,3 +18,52 @@
     </footer>
 </body>
 </html>
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배경 색상 바꾸기 게임</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        button {
+            padding: 20px 40px;
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>배경 색상 바꾸기 게임</h1>
+    <button onclick="changeBackgroundColor()">배경색 바꾸기</button>
+
+    <script>
+        function getRandomColor() {
+            // 16진수 색상 코드 생성
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        function changeBackgroundColor() {
+            // 무작위 색상으로 배경 색상 변경
+            document.body.style.backgroundColor = getRandomColor();
+        }
+    </script>
+</body>
+</html>
